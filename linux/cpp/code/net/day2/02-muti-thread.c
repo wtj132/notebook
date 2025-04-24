@@ -13,10 +13,11 @@
 //子线程回调函数
 void *thread_work(void *arg)
 {
-	sleep(20);
+	// sleep(20);
+	pthread_t tid = pthread_self();
 	int cfd = *(int *)arg;
 	printf("cfd==[%d]\n", cfd);
-	
+	printf("tid==[%lu]\n", (unsigned long)tid);
 	int i;
 	int n;
 	char buf[1024];
